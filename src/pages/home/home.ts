@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DemoPage } from '../demo/demo';
 import { UserPage } from '../user/user';
+import { CameraPage } from '../camera/camera';
 
 @Component({
     selector: 'page-home',
@@ -18,6 +19,11 @@ export class HomePage {
             name: "สมาชิกทั้งหมด",
             icon: "assets/imgs/user-icon.png",
             page: UserPage
+        },
+        {
+            name: "ถ่ายรูป",
+            icon: "assets/imgs/user-icon.png",
+            page: CameraPage
         },
     ];
     constructor(public navCtrl: NavController) {

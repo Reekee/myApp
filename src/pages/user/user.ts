@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the UserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.html',
+    selector: 'page-user',
+    templateUrl: 'user.html',
 })
 export class UserPage {
+    users = [];
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        private http: HttpClient
+    ) {
+    }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
-  }
+    ionViewDidLoad() {
+        this.http.post("http://localhost/myapi/user-get.php", JSON.stringify({})).subscribe((res: any) => {
+            //console.log(res);
+            this.users = res;
+        });
+    }
 
 }

@@ -4,5 +4,14 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-
+    <ion-list>
+        <ion-item *ngFor="let user of users">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/user-icon.png">
+            </ion-thumbnail>
+            <h2>{{ user.user_id }}</h2>
+            <p>{{ user.user_name }} {{ user.user_lname }}</p>
+            <button ion-button clear item-end>View</button>
+        </ion-item>
+    </ion-list>
 </ion-content>
