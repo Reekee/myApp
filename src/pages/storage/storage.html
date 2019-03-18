@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>storage</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>ข้อมูล</ion-label>
+            <ion-input type="text" [(ngModel)]="data"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button (click)="
+                setData()">SET DATA</button>
+    <button ion-button (click)="getData()">GET DATA</button>
+    <button ion-button (click)="removeData()">REMOVE DATA</button>
+    <dir>
+        Data : {{ data }}
+    </dir>
+</ion-content>

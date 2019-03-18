@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { DemoPage } from '../demo/demo';
 import { UserPage } from '../user/user';
 import { CameraPage } from '../camera/camera';
+import { StoragePage } from '../storage/storage';
+import { BarcodePage } from '../barcode/barcode';
 
 @Component({
     selector: 'page-home',
@@ -24,6 +26,16 @@ export class HomePage {
             name: "ถ่ายรูป",
             icon: "assets/imgs/user-icon.png",
             page: CameraPage
+        },
+        {
+            name: "Storage",
+            icon: "assets/imgs/user-icon.png",
+            page: StoragePage
+        },
+        {
+            name: "Scan Barcode",
+            icon: "assets/imgs/user-icon.png",
+            page: BarcodePage
         },
     ];
     constructor(public navCtrl: NavController) {

@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
@@ -11,6 +13,8 @@ import { HomePage } from '../pages/home/home';
 import { DemoPage } from '../pages/demo/demo';
 import { UserPage } from '../pages/user/user';
 import { CameraPage } from '../pages/camera/camera';
+import { StoragePage } from '../pages/storage/storage';
+import { BarcodePage } from '../pages/barcode/barcode';
 
 @NgModule({
     declarations: [
@@ -18,12 +22,15 @@ import { CameraPage } from '../pages/camera/camera';
         HomePage,
         DemoPage,
         UserPage,
-        CameraPage
+        CameraPage,
+        StoragePage,
+        BarcodePage
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        HttpClientModule
+        HttpClientModule,
+        IonicStorageModule.forRoot()
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -31,13 +38,16 @@ import { CameraPage } from '../pages/camera/camera';
         HomePage,
         DemoPage,
         UserPage,
-        CameraPage
+        CameraPage,
+        StoragePage,
+        BarcodePage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        Camera
+        Camera,
+        BarcodeScanner
     ]
 })
 export class AppModule { }
